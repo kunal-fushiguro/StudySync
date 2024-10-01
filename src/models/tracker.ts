@@ -12,4 +12,4 @@ const ProgressTracker = new Schema(
   { timestamps: true }
 );
 
-export const StudyPlan = models.progess || model("progess", ProgressTracker);
+export const Tracker = models.progess || model("progess", ProgressTracker);
