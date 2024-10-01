@@ -17,9 +17,11 @@ const UserSchema = new Schema(
     },
     isVerified: {
       type: Boolean,
+      default: false,
     },
     code: {
       type: Number,
+      default: 0,
     },
     profilePic: {
       type: String,
