@@ -34,10 +34,8 @@ const UserSchema = new Schema(
     },
     studyPlans: [
       {
-        studyPlansId: {
-          type: Schema.Types.ObjectId,
-          ref: "studyplans",
-        },
+        type: Schema.Types.ObjectId,
+        ref: "studyplans",
       },
     ],
   },

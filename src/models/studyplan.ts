@@ -30,10 +30,8 @@ const StudyPlansSchema = new Schema(
     },
     tasks: [
       {
-        taskId: {
-          type: Schema.Types.ObjectId,
-          ref: "tasks",
-        },
+        type: Schema.Types.ObjectId,
+        ref: "tasks",
       },
     ],
   },

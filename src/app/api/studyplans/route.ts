@@ -214,6 +214,7 @@ export async function PUT(request: Request) {
     }
 
     const studyPlan = await StudyPlan.findById(studyId);
+
     if (studyPlan.userId != id) {
       const response = new ApiResponse(401, "Unauthraized", {}, true);
       return NextResponse.json(response, {
