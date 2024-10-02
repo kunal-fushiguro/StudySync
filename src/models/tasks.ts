@@ -22,9 +22,11 @@ const StudyPlansSchema = new Schema(
     },
     isCompleted: {
       type: Boolean,
+      default: false,
     },
     minutes: {
       type: Number,
+      default: 0,
     },
   },
   { timestamps: true }
