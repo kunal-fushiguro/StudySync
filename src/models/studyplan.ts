@@ -19,6 +19,7 @@ const StudyPlansSchema = new Schema(
     },
     isCompleted: {
       type: Boolean,
+      default: false,
     },
     createdDate: {
       type: String,
