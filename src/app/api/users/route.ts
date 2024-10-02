@@ -16,7 +16,7 @@ export async function GET() {
       ENVIROMENT === "dev" ? error.stack || {} : {},
       false
     );
-    return NextResponse.json(response, { status: error.statusCode || 200 });
+    return NextResponse.json(response, { status: error.statusCode || 500 });
   }
 }
 
@@ -56,7 +56,7 @@ export async function POST(request: Request) {
 
     const newPassword = await hashThePassword(password);
 
-    const newUser = await Users.create({
+    await Users.create({
       name: name,
       email: email,
       password: newPassword,
@@ -64,8 +64,14 @@ export async function POST(request: Request) {
       themes: themes,
       banckgroundImg: banckgroundImg,
     });
-    const response = new ApiResponse(200, "Server is running", {}, true);
-    return NextResponse.json(response, { status: 200 });
+
+    const response = new ApiResponse(
+      201,
+      "User created please login",
+      {},
+      true
+    );
+    return NextResponse.json(response, { status: 201 });
   } catch (error: any) {
     const response = new ApiResponse(
       error.statusCode || 500,
