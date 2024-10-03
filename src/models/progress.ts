@@ -8,12 +8,14 @@ const ProgressTracker = new Schema(
     },
     progressDays: [
       {
-        id: {
-          type: Schema.Types.ObjectId,
-          ref: "tracker",
-        },
+        type: Schema.Types.ObjectId,
+        ref: "tracker",
       },
     ],
+    total: {
+      type: Number,
+      default: 0,
+    },
   },
   { timestamps: true }
 );
